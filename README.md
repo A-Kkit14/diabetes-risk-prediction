@@ -22,7 +22,7 @@ Dự án này khai thác bộ dữ liệu khảo sát sức khỏe cộng đồn
 * Kiểm tra tỉ lệ mất cân bằng của biến mục tiêu (86.1% No Diabetes vs 13.9% Diabetes)
 * Tự động phân nhóm biến (nhị phân / liên tục / phân loại) và ép kiểu dữ liệu phù hợp để tối ưu bộ nhớ và chuẩn hóa cho bước phân tích tiếp theo
 
-### 2\. Phân tích khám phá dữ liệu \& tương quan (EDA\_Diabetes\_1ipynb)
+### 2\. Phân tích khám phá dữ liệu & tương quan (EDA_Diabetes_1ipynb)
 
 * Phân tích phân phối cho từng nhóm biến: liên tục (histogram, KDE, boxplot), nhị phân (bar/pie chart), thứ bậc (GenHlth, Education, Income, AgeGroup)
 * Áp dụng đúng phương pháp thống kê tương quan theo từng cặp loại biến:
@@ -73,14 +73,14 @@ Dự án này khai thác bộ dữ liệu khảo sát sức khỏe cộng đồn
 
 ```
 ├── preprocess-for-data-mining-2.ipynb   # Bước 1: Tiền xử lý dữ liệu
-├── EDA\\\_-\\\_Diabetes\\\_\\\_1\\\_.ipynb             # Bước 2: EDA + phân tích tương quan
+├── EDA_-_Diabetes__1_.ipynb             # Bước 2: EDA + phân tích tương quan
 ├── machine-learning-for-data-mining-2.ipynb  # Bước 3: Huấn luyện \\\& đánh giá mô hình
-├── dt\\\_tuned\\\_pipeline.joblib             # Mô hình Decision Tree đã fine-tune (dùng cho dashboard)
+├── dt_tuned_pipeline.joblib             # Mô hình Decision Tree đã fine-tune (dùng cho dashboard)
 ├── diabete.py                           # Bước 4: Dashboard Streamlit
 └── README.md
 ```
 
-> \\\*\\\*Lưu ý:\\\*\\\* Cần đặt `data\\\_clean.csv` / `data\\\_decoded.csv` vào thư mục `Code/` (theo path được gọi trong `diabete.py`) trước khi chạy dashboard. Dataset gốc có thể tải từ Kaggle theo link ở trên.
+> *Lưu ý:* Cần đặt `data_clean.csv` / `data_decoded.csv` vào thư mục `Code/` (theo path được gọi trong `diabete.py`) trước khi chạy dashboard. Dataset gốc có thể tải từ Kaggle theo link ở trên.
 
 ## ▶️ Cách chạy dashboard
 
