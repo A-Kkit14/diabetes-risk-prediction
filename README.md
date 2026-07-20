@@ -12,17 +12,17 @@ Dự án này khai thác bộ dữ liệu khảo sát sức khỏe cộng đồn
 2. **Định lượng \& xếp hạng mức độ ảnh hưởng** của từng yếu tố nguy cơ (BMI, huyết áp, tuổi tác, lối sống...) lên khả năng mắc bệnh
 3. **Trực quan hóa insight** qua một dashboard tương tác, giúp người dùng không chuyên vẫn hiểu được dữ liệu
 
-**Dataset:** [Diabetes Health Indicators Dataset](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset) (Kaggle) — 253,680 quan sát, 21 biến đầu vào, biến mục tiêu `Diabetes\_binary` (nhị phân).
+**Dataset:** [Diabetes Health Indicators Dataset](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset) (Kaggle) — 253,680 quan sát, 21 biến đầu vào, biến mục tiêu `Diabetes\\\_binary` (nhị phân).
 
 ## 🧠 Công việc đã thực hiện
 
-### 1\. Tiền xử lý dữ liệu (`preprocess-for-data-mining-2.ipynb`)
+### 1\. Tiền xử lý dữ liệu (preprocess-for-data-mining-2.ipynb)
 
 * Kiểm tra chất lượng dữ liệu: missing values, dữ liệu trùng lặp, outlier (IQR) trên các biến liên tục (BMI, MentHlth, PhysHlth)
 * Kiểm tra tỉ lệ mất cân bằng của biến mục tiêu (86.1% No Diabetes vs 13.9% Diabetes)
 * Tự động phân nhóm biến (nhị phân / liên tục / phân loại) và ép kiểu dữ liệu phù hợp để tối ưu bộ nhớ và chuẩn hóa cho bước phân tích tiếp theo
 
-### 2\. Phân tích khám phá dữ liệu \& tương quan (`EDA\_-\_Diabetes\_\_1\_.ipynb`)
+### 2\. Phân tích khám phá dữ liệu \& tương quan (EDA\_Diabetes\_1ipynb)
 
 * Phân tích phân phối cho từng nhóm biến: liên tục (histogram, KDE, boxplot), nhị phân (bar/pie chart), thứ bậc (GenHlth, Education, Income, AgeGroup)
 * Áp dụng đúng phương pháp thống kê tương quan theo từng cặp loại biến:
@@ -33,7 +33,7 @@ Dự án này khai thác bộ dữ liệu khảo sát sức khỏe cộng đồn
 * Kiểm tra **đa cộng tuyến (VIF)** để phát hiện các biến chồng chéo thông tin (Education, Income, GenHlth, BMI)
 * Rút ra insight y học: BMI là "ngòi nổ" của chuỗi bệnh lý nền; GenHlth (cảm nhận sức khỏe chủ quan) có giá trị dự báo cao nhất; yếu tố kinh tế-xã hội có tác động bảo vệ gián tiếp
 
-### 3\. Xây dựng \& đánh giá mô hình Machine Learning (`machine-learning-for-data-mining-2.ipynb`)
+### 3\. Xây dựng \& đánh giá mô hình Machine Learning (machine-learning-for-data-mining-2.ipynb)
 
 * Lấy mẫu phân tầng 100,000 quan sát để huấn luyện
 * Thử nghiệm 5 mô hình dạng cây: **Decision Tree, Random Forest, Gradient Boosting, XGBoost, AdaBoost**
@@ -43,9 +43,9 @@ Dự án này khai thác bộ dữ liệu khảo sát sức khỏe cộng đồn
 * Đánh giá mô hình được chọn qua **Precision-Recall Curve** và **ROC-AUC Curve** trên tập Test
 * Diễn giải mô hình bằng **Feature Importance** và trực quan hóa cây quyết định để rút ra luật dự đoán dễ hiểu (VD: GenHlth + HighBP là hai yếu tố quyết định mạnh nhất)
 * Lựa chọn **Decision Tree** làm mô hình triển khai cuối cùng vì tính đơn giản, dễ diễn giải — phù hợp bối cảnh y tế cần minh bạch trong quyết định, dù đánh đổi F1-Score thấp hơn để đổi lấy Recall cao (\~0.85)
-* Model đã huấn luyện được lưu tại `dt\_tuned\_pipeline.joblib`
+* Model đã huấn luyện được lưu tại `dt\\\_tuned\\\_pipeline.joblib`
 
-### 4\. Xây dựng Dashboard tương tác (`diabete.py`)
+### 4\. Xây dựng Dashboard tương tác (diabete.py)
 
 * Ứng dụng web bằng **Streamlit**, gồm 7 trang điều hướng qua sidebar:
 
@@ -73,14 +73,14 @@ Dự án này khai thác bộ dữ liệu khảo sát sức khỏe cộng đồn
 
 ```
 ├── preprocess-for-data-mining-2.ipynb   # Bước 1: Tiền xử lý dữ liệu
-├── EDA\_-\_Diabetes\_\_1\_.ipynb             # Bước 2: EDA + phân tích tương quan
-├── machine-learning-for-data-mining-2.ipynb  # Bước 3: Huấn luyện \& đánh giá mô hình
-├── dt\_tuned\_pipeline.joblib             # Mô hình Decision Tree đã fine-tune (dùng cho dashboard)
+├── EDA\\\_-\\\_Diabetes\\\_\\\_1\\\_.ipynb             # Bước 2: EDA + phân tích tương quan
+├── machine-learning-for-data-mining-2.ipynb  # Bước 3: Huấn luyện \\\& đánh giá mô hình
+├── dt\\\_tuned\\\_pipeline.joblib             # Mô hình Decision Tree đã fine-tune (dùng cho dashboard)
 ├── diabete.py                           # Bước 4: Dashboard Streamlit
 └── README.md
 ```
 
-> \*\*Lưu ý:\*\* Cần đặt `data\_clean.csv` / `data\_decoded.csv` vào thư mục `Code/` (theo path được gọi trong `diabete.py`) trước khi chạy dashboard. Dataset gốc có thể tải từ Kaggle theo link ở trên.
+> \\\*\\\*Lưu ý:\\\*\\\* Cần đặt `data\\\_clean.csv` / `data\\\_decoded.csv` vào thư mục `Code/` (theo path được gọi trong `diabete.py`) trước khi chạy dashboard. Dataset gốc có thể tải từ Kaggle theo link ở trên.
 
 ## ▶️ Cách chạy dashboard
 
