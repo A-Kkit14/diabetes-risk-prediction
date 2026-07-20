@@ -12,7 +12,7 @@ Dự án này khai thác bộ dữ liệu khảo sát sức khỏe cộng đồn
 2. **Định lượng \& xếp hạng mức độ ảnh hưởng** của từng yếu tố nguy cơ (BMI, huyết áp, tuổi tác, lối sống...) lên khả năng mắc bệnh
 3. **Trực quan hóa insight** qua một dashboard tương tác, giúp người dùng không chuyên vẫn hiểu được dữ liệu
 
-**Dataset:** [Diabetes Health Indicators Dataset](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset) (Kaggle) — 253,680 quan sát, 21 biến đầu vào, biến mục tiêu `Diabetes\\\_binary` (nhị phân).
+**Dataset:** [Diabetes Health Indicators Dataset](https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset) (Kaggle) — 253,680 quan sát, 21 biến đầu vào, biến mục tiêu `Diabetes_binary` (nhị phân).
 
 ## 🧠 Công việc đã thực hiện
 
@@ -43,13 +43,13 @@ Dự án này khai thác bộ dữ liệu khảo sát sức khỏe cộng đồn
 * Đánh giá mô hình được chọn qua **Precision-Recall Curve** và **ROC-AUC Curve** trên tập Test
 * Diễn giải mô hình bằng **Feature Importance** và trực quan hóa cây quyết định để rút ra luật dự đoán dễ hiểu (VD: GenHlth + HighBP là hai yếu tố quyết định mạnh nhất)
 * Lựa chọn **Decision Tree** làm mô hình triển khai cuối cùng vì tính đơn giản, dễ diễn giải — phù hợp bối cảnh y tế cần minh bạch trong quyết định, dù đánh đổi F1-Score thấp hơn để đổi lấy Recall cao (\~0.85)
-* Model đã huấn luyện được lưu tại `dt\\\_tuned\\\_pipeline.joblib`
+* Model đã huấn luyện được lưu tại `dt_tuned_pipeline.joblib`
 
 ### 4\. Xây dựng Dashboard tương tác (diabete.py)
 
 * Ứng dụng web bằng **Streamlit**, gồm 7 trang điều hướng qua sidebar:
 
-  * **Overview** — thống kê tổng quan \& phân phối biến mục tiêu
+  * **Overview** — thống kê tổng quan & phân phối biến mục tiêu
   * **Ordinal vs Diabetes** — phân tích biến thứ bậc (GenHlth, Education, Income, AgeGroup)
   * **Binary vs Diabetes** — bar chart \& pie chart tương tác cho biến nhị phân
   * **Continuous vs Diabetes** — KDE plot so sánh phân phối BMI/MentHlth/PhysHlth
@@ -74,7 +74,7 @@ Dự án này khai thác bộ dữ liệu khảo sát sức khỏe cộng đồn
 ```
 ├── preprocess-for-data-mining-2.ipynb   # Bước 1: Tiền xử lý dữ liệu
 ├── EDA_-_Diabetes__1_.ipynb             # Bước 2: EDA + phân tích tương quan
-├── machine-learning-for-data-mining-2.ipynb  # Bước 3: Huấn luyện \\\& đánh giá mô hình
+├── machine-learning-for-data-mining-2.ipynb  # Bước 3: Huấn luyện & đánh giá mô hình
 ├── dt_tuned_pipeline.joblib             # Mô hình Decision Tree đã fine-tune (dùng cho dashboard)
 ├── diabete.py                           # Bước 4: Dashboard Streamlit
 └── README.md
